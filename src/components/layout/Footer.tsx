@@ -78,7 +78,7 @@ export function Footer() {
 
         <div className="mt-12 border-t border-background/20 pt-8 text-center">
           <p className="text-sm text-background/60">
-            © {new Date().getFullYear()} Golden Groove Dental Clinic. All rights reserved.
+            © {new Date().getFullYear()} Dental Groove. All rights reserved.
           </p>
           <p className="mt-2 text-xs text-background/40">
             Dr. Insha Farheen, BDS

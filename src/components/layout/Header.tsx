@@ -38,9 +38,9 @@ export function Header() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary">
-            <span className="text-xl font-bold text-primary-foreground">G</span>
+            <span className="text-xl font-bold text-primary-foreground">D</span>
           </div>
-          <span className="text-xl font-semibold text-foreground">Golden Groove</span>
+          <span className="text-xl font-semibold text-foreground">Dental Groove</span>
         </Link>
 
         {/* Desktop Navigation */}
