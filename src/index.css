@@ -1,0 +1,313 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Golden Groove Dental Clinic Design System
+   A calming, trustworthy healthcare aesthetic with soft teals, warm neutrals, and professional typography
+*/
+
+@layer base {
+  :root {
+    /* Sapphire & Ice Blue Palette */
+    --background: 0 0% 100%;
+    --foreground: 224 100% 7%;
+    /* #000926 - Deep Navy */
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 100% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 100% 7%;
+
+    --primary: 216 85% 39%;
+    /* #0F52BA - Sapphire */
+    --primary-foreground: 0 0% 100%;
+    /* White */
+
+    --secondary: 205 53% 90%;
+    /* #D6E6F3 - Ice Blue */
+    --secondary-foreground: 216 85% 39%;
+
+    --muted: 205 53% 90%;
+    --muted-foreground: 216 30% 40%;
+    /* Derived Muted Navy */
+
+    --accent: 203 37% 75%;
+    /* #A6C5D7 - Powder Blue */
+    --accent-foreground: 224 100% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 203 37% 75%;
+    /* Powder Blue Border */
+    --input: 203 37% 75%;
+    --ring: 216 85% 39%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 224 100% 7%;
+    --sidebar-primary: 216 85% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 205 53% 90%;
+    --sidebar-accent-foreground: 216 85% 39%;
+    --sidebar-border: 203 37% 75%;
+    --sidebar-ring: 216 85% 39%;
+
+    /* Custom tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(205 53% 90%) 0%, hsl(203 37% 75%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(224 100% 7% / 0.08);
+    --card-shadow-hover: 0 8px 30px -6px hsl(224 100% 7% / 0.12);
+    --glass-bg: hsl(0 0% 100% / 0.85);
+    --glass-border: hsl(203 37% 75% / 0.5);
+  }
+
+  .dark {
+    /* Sapphire & Ice Blue - Dark Mode */
+    --background: 224 100% 7%;
+    /* #000926 - Deep Navy */
+    --foreground: 205 53% 90%;
+    /* Ice Blue Text */
+
+    --card: 224 50% 10%;
+    /* Slightly lighter navy */
+    --card-foreground: 205 53% 90%;
+
+    --popover: 224 50% 10%;
+    --popover-foreground: 205 53% 90%;
+
+    --primary: 216 85% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 216 50% 20%;
+    --secondary-foreground: 205 53% 90%;
+
+    --muted: 216 50% 20%;
+    --muted-foreground: 203 30% 60%;
+
+    --accent: 216 85% 39%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 216 50% 20%;
+    --input: 216 50% 20%;
+    --ring: 216 85% 39%;
+
+    --sidebar-background: 224 100% 5%;
+    --sidebar-foreground: 205 53% 90%;
+    --sidebar-primary: 216 85% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 50% 15%;
+    --sidebar-accent-foreground: 205 53% 90%;
+    --sidebar-border: 224 50% 15%;
+    --sidebar-ring: 216 85% 39%;
+
+    --hero-gradient: linear-gradient(135deg, hsl(224 100% 10%) 0%, hsl(224 100% 5%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --card-shadow-hover: 0 8px 30px -6px hsl(0 0% 0% / 0.4);
+    --glass-bg: hsl(224 100% 7% / 0.8);
+    --glass-border: hsl(203 37% 75% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}
+
+@layer components {
+
+  /* Hero Button Variants */
+  .btn-hero {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-lg font-semibold transition-all duration-300;
+    background: var(--hero-gradient);
+    @apply text-primary shadow-lg;
+  }
+
+  .btn-hero:hover {
+    @apply scale-[1.02] shadow-xl;
+    filter: brightness(1.05);
+  }
+
+  .btn-hero-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary bg-transparent px-8 py-4 text-lg font-semibold text-primary transition-all duration-300;
+  }
+
+  .btn-hero-outline:hover {
+    @apply bg-primary text-primary-foreground scale-[1.02];
+  }
+
+  /* Glass Card Effect */
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    @apply backdrop-blur-md rounded-2xl;
+    box-shadow: var(--card-shadow);
+  }
+
+  .glass-card:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  /* Premium Card */
+  .premium-card {
+    @apply bg-card rounded-2xl p-6 transition-all duration-300;
+    box-shadow: var(--card-shadow);
+  }
+
+  .premium-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    @apply -translate-y-1;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    @apply text-primary;
+    /* Removed gradient text for cleaner look, just use Primary */
+  }
+
+  /* Status Badges */
+  .badge-pending {
+    @apply bg-warning/15 text-warning border border-warning/30;
+  }
+
+  .badge-approved {
+    @apply bg-success/15 text-success border border-success/30;
+  }
+
+  .badge-rejected {
+    @apply bg-destructive/15 text-destructive border border-destructive/30;
+  }
+
+  .badge-completed {
+    @apply bg-primary/15 text-primary border border-primary/30;
+  }
+
+  /* Smooth scroll for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus visible styling */
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer utilities {
+
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulseSoft {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
