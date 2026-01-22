@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import BookAppointment from "./pages/BookAppointment";
 import Services from "./pages/Services";
 import { DashboardLayout } from "./components/layout/DashboardLayout";
+import { AdminRoute } from "@/components/auth/AdminRoute";
 import Dashboard from "./pages/dashboard/Dashboard";
 
 const queryClient = new QueryClient();
@@ -31,10 +32,12 @@ const App = () => (
               <Route path="/services" element={<Services />} />
             </Route>
 
-            {/* Protected Dashboard Routes */}
-            <Route path="/dashboard" element={<DashboardLayout />}>
-              <Route index element={<Dashboard />} />
-              {/* Add other dashboard sub-routes here later */}
+            {/* Protected Dashboard Routes - Admin Only */}
+            <Route element={<AdminRoute />}>
+              <Route path="/dashboard" element={<DashboardLayout />}>
+                <Route index element={<Dashboard />} />
+                {/* Add other dashboard sub-routes here later */}
+              </Route>
             </Route>
 
             <Route path="/login" element={<Login />} />
