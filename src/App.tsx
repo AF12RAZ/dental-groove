@@ -11,6 +11,8 @@ import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
 import BookAppointment from "./pages/BookAppointment";
 import Services from "./pages/Services";
+import MyAppointments from "./pages/MyAppointments";
+import Profile from "./pages/Profile";
 import { DashboardLayout } from "./components/layout/DashboardLayout";
 import { AdminRoute } from "@/components/auth/AdminRoute";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -30,6 +32,8 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
               <Route path="/book" element={<BookAppointment />} />
               <Route path="/services" element={<Services />} />
+              <Route path="/my-appointments" element={<MyAppointments />} />
+              <Route path="/profile" element={<Profile />} />
             </Route>
 
             {/* Protected Dashboard Routes - Admin Only */}
